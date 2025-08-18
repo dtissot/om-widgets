@@ -13,17 +13,6 @@
 (defn- get-weekdays [sunday-first?]
   (if sunday-first? days-short-sunday-first days-short))
 
-(defn- build-previous-month-days [date]
-  (let [current-month (time/date-time (time/year date) (time/month date))
-        weekday-current-month (time/day-of-week current-month)
-        previous-month (time/minus current-month (time/months 1))
-        last-day (time/number-of-days-in-the-month previous-month)
-        days-to-fill (range (inc (- last-day (dec weekday-current-month))) (inc last-day))]
-    (mapv (fn [d] {:day d
-                   :month (- 1 (time/month date))
-                   :year (time/year date)
-                   :belongs-to-month :previous}) days-to-fill)))
-
 (defn- build-previous-month-days [date sunday-first?]
   (let [current-month (time/date-time (time/year date) (time/month date))
         weekday-current-month (time/day-of-week current-month)
@@ -44,18 +33,6 @@
              :year (time/year date)
              :belongs-to-month :current})
           (range 1 (inc last-day)))))
-
-(defn- build-next-month-days [date]
-  (let [current-month (time/date-time (time/year date) (time/month date))
-        last-day-number (time/number-of-days-in-the-month current-month)
-        last-day (time/date-time (time/year current-month) (time/month current-month) last-day-number)
-        weekday-last-day (time/day-of-week last-day)
-        weekday-current-month (time/day-of-week current-month)
-        days-to-fill (range 1 (inc (- 14 weekday-last-day)))]
-    (mapv (fn [d] {:day d
-                   :month (+ 1 (time/month date))
-                   :year (time/year date)
-                   :belongs-to-month :next}) days-to-fill)))
 
 (defn- build-next-month-days [date sunday-first?]
   (let [current-month (time/date-time (time/year date) (time/month date))
