@@ -76,14 +76,14 @@
              (w/popover
                (fn [show]
                  [:div.input-group
-                  (w/textinput app :input-group-right {:input-class "form-control"
+                  (w/textinput app :slash-separator {:input-class "form-control"
                                                        :input-format "date"
                                                        :date-format "yyyy/MM/dd"})
                   [:span.input-group-btn
                    [:button.btn.btn-primary {:id "btn-cal-right" :onClick show}
                     [:span.glyphicon.glyphicon-calendar]]]])
                (fn [close]
-                 (w/datepicker app :input-group-right))
+                 (w/datepicker app :slash-separator))
                {:for "btn-cal-right"})]
 
             [:div.well
@@ -91,14 +91,14 @@
              (w/popover
                (fn [show]
                  [:div.input-group
-                  (w/textinput app :input-group-right {:input-class "form-control"
+                  (w/textinput app :hyphen-separator {:input-class "form-control"
                                                        :input-format "date"
                                                        :date-format "yyyy-MM-dd"})
                   [:span.input-group-btn
                    [:button.btn.btn-primary {:id "btn-cal-right" :onClick show}
                     [:span.glyphicon.glyphicon-calendar]]]])
                (fn [close]
-                 (w/datepicker app :input-group-right))
+                 (w/datepicker app :hyphen-separator))
                {:for "btn-cal-right"})]
 
             [:div.well
@@ -106,14 +106,14 @@
              (w/popover
                (fn [show]
                  [:div.input-group
-                  (w/textinput app :input-group-right {:input-class "form-control"
+                  (w/textinput app :dot-separator {:input-class "form-control"
                                                        :input-format "date"
                                                        :date-format "MM.dd.yyyy"})
                   [:span.input-group-btn
                    [:button.btn.btn-primary {:id "btn-cal-right" :onClick show}
                     [:span.glyphicon.glyphicon-calendar]]]])
                (fn [close]
-                 (w/datepicker app :input-group-right))
+                 (w/datepicker app :dot-separator))
                {:for "btn-cal-right"})]
 
             [:div.well
@@ -121,14 +121,14 @@
              (w/popover
                (fn [show]
                  [:div.input-group
-                  (w/textinput app :input-group-close-on-change {:input-class "form-control"
+                  (w/textinput app :no-separator {:input-class "form-control"
                                                                  :input-format "date"
                                                                  :date-format "yyyyMMdd"})
                   [:span.input-group-btn
                    [:button.btn.btn-primary {:id "btn-cal-close-on-select" :onClick show}
                     [:span.glyphicon.glyphicon-calendar]]]])
                (fn [close]
-                 (w/datepicker app :input-group-close-on-change {:onChange close}))
+                 (w/datepicker app :no-separator))
                {:for "btn-cal-close-on-select"})]]
 
            [:div.col-lg-6
