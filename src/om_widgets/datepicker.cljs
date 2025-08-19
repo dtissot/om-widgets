@@ -21,7 +21,7 @@
         sunday-first-offset (if sunday-first? 1 0)
         days-to-fill (range (inc (- last-day (dec weekday-current-month) sunday-first-offset)) (inc last-day))]
     (mapv (fn [d] {:day d
-                   :month (- 1 (time/month date))
+                   :month (- (time/month date) 1)
                    :year (time/year date)
                    :belongs-to-month :previous}) days-to-fill)))
 
