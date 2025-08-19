@@ -41,7 +41,6 @@
         weekday-last-day (time/day-of-week last-day)
         sunday-first-offset (if sunday-first? 1 0)
         days-to-fill (range 1 (inc (- 14 weekday-last-day sunday-first-offset)))]
-    (println "days to fill " (inc (- 14 weekday-last-day)))
     (mapv (fn [d] {:day d
                    :month (+ 1 (time/month date))
                    :year (time/year date)
